@@ -4,6 +4,7 @@ import { FiSettings } from "react-icons/fi"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
 import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
 function App() {
   const activeMenu = true
   return (
@@ -22,8 +23,8 @@ function App() {
           ) : (
             <div className="w-0 dark:bg-secondary-dark-bg"><Sidebar /></div>
           )}
-        <div className={`dark:bg-main-drk-bg bg-main-bg min-h-screen w-full border-4 border-red-600 ${activeMenu ? "md:ml-72" : "flex-2"}`}>
-          <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">navbar</div>
+        <div className={`dark:bg-main-drk-bg bg-main-bg min-h-screen w-full border-4 ${activeMenu ? "md:ml-72" : "flex-2"}`}>
+          <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full"><Navbar /></div>
         </div>
       </div>
       <Routes>
