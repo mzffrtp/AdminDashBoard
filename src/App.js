@@ -5,8 +5,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
+import { useStateContext } from "./context/ContextProvider"
 function App() {
-  const activeMenu = true
+  const { activeMenu } = useStateContext()
   return (
     <BrowserRouter>
       <div className="flex relative dark:bg-main-dark-bg mt-28">
