@@ -1,5 +1,6 @@
 import React from "react"
-import { SparkLine } from "../../../components"
+import { Button, SparkLine } from "../../../components"
+import { SparklineAreaData } from "../../../data/dummy"
 
 export default function Reveneu () {
     return (
@@ -32,7 +33,23 @@ export default function Reveneu () {
                             <p className="text-gray-500 mt-1">Expense</p>
                         </div>
                         <div className="mt-5">
-                            <SparkLine />
+                            <SparkLine 
+                            id="line-sparkLine"
+                            height="80px"
+                            width="250px"
+                            color= "blue"
+                            data={SparklineAreaData}
+                            type="Line"
+                            currentColor="red"
+                            />
+                        </div>
+                        <div className="mt-10">
+                            <Button 
+                            color = "white"
+                            bgColor="red"
+                            text="Download Report"
+                            borderRadius="1rem"
+                            />
                         </div>
                     </div>
                 </div>
