@@ -7,7 +7,11 @@ import {BsChatLeft} from "react-icons/bs"
 import {RiNotification3Line} from "react-icons/ri";
 import avatar from "../data/avatar.jpg";
 import {MdKeyboardArrowDown} from "react-icons/md";
-import { Cart, Chat, Notification, UserProfile } from '.';
+import Cart from './Cart';
+import Chat from './Chat';
+import Notifications from "./Notifications";
+import User from "./User";
+
 
 const NavButton = ({title, customFunc, icon, color, dotColor}) => (
   <TooltipComponent content={title} position='BottomCenter'>
@@ -15,12 +19,12 @@ const NavButton = ({title, customFunc, icon, color, dotColor}) => (
     type='button'
     onClick={()=> customFunc()}
     style={{color}}
-    className='relative text-xl rounded-full p-3 hover:bg-light-gray'><span style={{background:dotColor}} className='absolute inline-flex rounded-full h-2 w-2 right-2 top-2'>{icon}</span></button>
+    className='relative text-xl rounded-full p-3 hover:bg-light-gray'><span style={{background:dotColor}} className='absolute inline-flex rounded-full h-2 w-2 right-2 top-2'></span>{icon}</button>
   </TooltipComponent>
 )
 
 function Navbar() {
-const {activeMenu, setActiveMenu,isClicked, handleClick, screenSize, setScreenSize} = useStateContext()
+const {activeMenu, setActiveMenu, handleClick, screenSize, setScreenSize, isClicked} = useStateContext()
 const handleActiveMenu = () => setActiveMenu(!activeMenu)
 
 useEffect(()=> {
@@ -39,9 +43,9 @@ useEffect(()=> {
       <div className='flex'>
         <NavButton  title="Cart" customFunc={()=>handleClick("cart")} color={""} icon={<FiShoppingCart />}/>
         <NavButton  title="Chat" customFunc={()=>handleClick("chat")} color={""} icon={<BsChatLeft />} dotColor={"orange"}/>
-        <NavButton  title="Notification" customFunc={()=>handleClick("notification")} color={""} icon={<RiNotification3Line />} dotColor={"pink"}/>
+        <NavButton  title="Notification" customFunc={()=>handleClick("notifications")} color={""} icon={<RiNotification3Line />} dotColor={"pink"}/>
         <TooltipComponent content={"Profile"} position='BottomCenter'>
-          <div className='flex items-center gap-2 cursor-pointer p-1rounded-lg hover:bg-light-gray' onClick={()=>handleClick("userProfile")}>
+          <div className='flex items-center gap-2 cursor-pointer p-1rounded-lg hover:bg-light-gray' onClick={()=>handleClick("user")}>
             <img className='rounded-full w-8 h-8' src={avatar} alt='user-profile'/>
             <p>
               <span className='text-gray-400 text-14'>Hi</span>
@@ -51,13 +55,9 @@ useEffect(()=> {
           </div>
         </TooltipComponent>
         {isClicked.cart && (<Cart />)}
-        {isClicked.chat && (<Chat/>)}
-        {isClicked.notification && (<Notification/>)}
-        {isClicked.userProfile && (<UserProfile/>)}
-
-
-
-
+        {isClicked.chat && (<Chat />)}
+        {isClicked.user && (<User />)}
+        {isClicked.notifications && (<Notifications />)}
       </div>
     </div>
   )
