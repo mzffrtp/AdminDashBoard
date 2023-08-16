@@ -2,10 +2,11 @@ import React from "react"
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { FiSettings } from "react-icons/fi"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
+import { Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
 import Sidebar from "./components/Sidebar";
 import { useStateContext } from "./context/ContextProvider"
 import Navbar from "./components/Navbar";
+import Ecommerce from "./pages/Ecommerce/Ecommerce";
 function App() {
   const { activeMenu } = useStateContext()
   return (
