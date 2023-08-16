@@ -1,5 +1,5 @@
 import React from "react"
-import { Button, SparkLine } from "../../../components"
+import { Button, SparkLine, Stacked } from "../../../components"
 import { SparklineAreaData } from "../../../data/dummy"
 
 export default function Reveneu () {
@@ -51,6 +51,9 @@ export default function Reveneu () {
                             borderRadius="1rem"
                             />
                         </div>
+                    </div>
+                    <div>
+                        <Stacked />
                     </div>
                 </div>
             </div>
