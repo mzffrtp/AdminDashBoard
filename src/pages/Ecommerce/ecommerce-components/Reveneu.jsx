@@ -6,7 +6,7 @@ import { useStateContext } from "../../../context/ContextProvider"
 export default function Reveneu () {
     const {screenSize} = useStateContext() 
     return (
-        <div className="flex gap-10 flex-wrap justify-center">
+        <div className="flex gap-10 flex-wrap justify-center z-50">
             <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-70">
                 {
                     screenSize<900 ? (
