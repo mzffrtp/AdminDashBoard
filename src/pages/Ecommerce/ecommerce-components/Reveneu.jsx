@@ -4,7 +4,7 @@ import { SparklineAreaData } from "../../../data/dummy"
 import { useStateContext } from "../../../context/ContextProvider"
 
 export default function Reveneu () {
-    const {screenSize} = useStateContext() 
+    const {screenSize, currentColor, currentMode } = useStateContext() 
     return (
         <div className="flex gap-10 flex-wrap justify-center z-50">
             <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-70">
@@ -47,16 +47,16 @@ export default function Reveneu () {
                             id="line-sparkLine"
                             height="80px"
                             width="250px"
-                            color= "blue"
+                            color= {currentColor}
                             data={SparklineAreaData}
                             type="Line"
-                            currentColor="red"
+                            currentColor={currentColor}
                             />
                         </div>
                         <div className="mt-10">
                             <Button 
                             color = "white"
-                            bgColor="red"
+                            bgColor={currentColor}
                             text="Download Report"
                             borderRadius="1rem"
                             />
