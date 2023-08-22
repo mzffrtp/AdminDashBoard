@@ -23,7 +23,7 @@ function App() {
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
       <BrowserRouter>
-        <div className="flex relative dark:bg-main-dark-bg mt-28">
+        <div className="flex relative dark:bg-main-dark-bg mt-12">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
             <TooltipComponent content="Settings" position={screenSize > 900 ? "Center" : "Top"}>
               <button type="button" className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray" style={{ borderRadius: "50%", backgroundColor: currentColor }}
